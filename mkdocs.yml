@@ -1,0 +1,130 @@
+# Project Information
+site_name: ZJL Wiki
+site_url: https://zjl-wiki.netlify.app
+site_description: ZJL Wiki 是一个ZJL知识整合站点，提供有趣又也许实用的ZJL知识，帮助广大ZJL信仰者更快更深入掌握有关信息
+site_author: ZJL Wiki Team
+repo_url: https://github.com/ZJL-wiki/ZJL-wiki
+strict: false
+
+# Copyright
+copyright: Copyright &copy; 2025 ZJL Wiki Team
+
+# Contents
+nav:
+  - 简介:
+      - Getting Started: index.md
+      - 关于本项目: intro/about.md
+      - ZJL Wiki 不是什么: intro/what-zjl-wiki-is-not.md
+      - 如何参与: intro/htc.md
+      - 格式手册: intro/format.md
+      - F.A.Q: intro/faq.md
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+hooks:
+  - hooks/on_env.py
+
+# Plugin
+plugins:
+  - search
+  - meta
+  # - git-authors
+  # - git-revision-date-localizxed:
+  #     enable_creation_date: !ENV [CI, false]
+
+#Theme
+theme:
+  name: material
+  custom_dir: overrides
+  language: zh
+
+  icon:
+    repo: fontawesome/brands/github-alt
+
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: pink
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  font:
+    text: "Fira Sans"
+    code: "Fira Mono"
+
+  features:
+    # Navigation
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - navigation.prune
+    - navigation.top
+    - navigation.footer
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+    # Header
+    - header.autohide
+    # Announce
+    - announce.dismiss
+    # Git
+    - content.action.edit
+    - content.action.view
+
+markdown_extensions:
+  - meta
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+  - tables
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic:
+      mode: view
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      linenums: true
+      line_spans: __span
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true

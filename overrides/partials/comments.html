@@ -1,0 +1,10 @@
+{% set comments = page.meta.comments | default(true, true) | toBoolean() %}
+
+{% if comments %}
+
+{% set pageID = page.title | default("404", true) %}
+
+<div id="__comments" class="giscus" data-no-instant></div>
+{% include "partials/javascripts/comments.html" %}
+
+{% endif %}

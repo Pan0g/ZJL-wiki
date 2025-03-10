@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "remark-cli": "^12.0.1",
+    "remark-lint": "^10.0.1",
+    "remark-lint-no-heading-punctuation": "^4.0.1",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "node-html-parser": "^7.0.1",
+    "remark-copywriting-correct": "^0.6.0",
+    "remark-details": "^4.1.1",
+    "remark-gfm": "^4.0.1",
+    "remark-lint-final-newline": "^3.0.1",
+    "remark-lint-no-tabs": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-math-space": "^3.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-preset-lint-markdown-style-guide": "^6.0.1",
+    "remark-stringify": "^11.0.0",
+    "remark-tabbed": "^0.1.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0",
+    "yargs": "^17.7.2"
+  }
+}
