@@ -4,7 +4,7 @@ set -e
 
 DIRNAME="$(dirname -- "${BASH_SOURCE[0]}")"
 
-source "$DIRNAME"/install-python.sh
+# source "$DIRNAME"/install-python.sh
 
 # Install dependencies
 pipenv install
