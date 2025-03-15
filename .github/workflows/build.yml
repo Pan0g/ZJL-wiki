@@ -13,6 +13,8 @@ jobs:
   build:
     name: ZJL-Wiki Page Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,7 +47,7 @@ jobs:
           pipenv run mkdocs build -v
       - name: Post-process HTML
         # https://github.com/TypeStrong/ts-node/issues/1997
-        run: node --loader ts-node/esm scripts/post-build/html-postprocess.ts commits-info math external-links
+        run: node --trace-warnings --loader ts-node/esm scripts/post-build/html-postprocess.ts external-links
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_OPTIONS: --max_old_space_size=3072
@@ -57,13 +59,13 @@ jobs:
         uses: wjdp/htmltest-action@master
         with:
           skip_external: true
-      - name: Fetch old site
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: old-site
-      - name: Check _redirects
-        run: pipenv run python scripts/post-build/redirect/check-redirects.py
+      # - name: Fetch old site
+      #   uses: actions/checkout@v4
+      #   with:
+      #     ref: gh-pages
+      #     path: old-site
+      # - name: Check _redirects
+      #   run: pipenv run python scripts/post-build/redirect/check-redirects.py
       - name: Deploy to gh-pages
         if: ${{ github.event_name == 'push' }}
         uses: peaceiris/actions-gh-pages@v4

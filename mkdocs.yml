@@ -20,7 +20,6 @@ nav:
       - F.A.Q: intro/faq.md
 
 extra_javascript:
-  - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
 
 hooks:
