@@ -1,7 +1,7 @@
 [build]
-  base = "scripts/" # Trick to disable dependencies installation
-  command = "cd .. && scripts/netlify/build.sh"
+  command = "scripts/netlify/build.sh"
   publish = "site"
 
 [build.environment]
   NODE_VERSION = "20"
+  PYTHON_VERSION = "3.9"

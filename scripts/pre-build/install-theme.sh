@@ -2,6 +2,8 @@
 
 set -eo pipefail
 
+echo "run install-theme.sh"
+
 DIRNAME="$(dirname -- "${BASH_SOURCE[0]}")"
 
 THEME_NAME="mkdocs-material"
@@ -14,4 +16,6 @@ fi
 git submodule update --init --recursive
 git -C "$THEME_NAME" log -1
 
-"$DIRNAME"/install-theme-vendor.sh
+# "$DIRNAME"/install-theme-vendor.sh
+
+echo "finish install-theme.sh"
