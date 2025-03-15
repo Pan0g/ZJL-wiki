@@ -1,8 +1,9 @@
-from glob import glob
+from glob import iglob
 
 
 def getUriSet(root: str):
-    return set(glob("**/*.html", root_dir=root, recursive=True))
+    rootstr = f"./{root}/"
+    return set([path[len(rootstr):] for path in iglob(f"{rootstr}**/*.html", recursive=True)])
 
 
 oldSet = getUriSet("old-site")
