@@ -18,6 +18,8 @@ nav:
       - 如何参与: intro/htc.md
       - 格式手册: intro/format.md
       - F.A.Q: intro/faq.md
+  - 文学:
+      - 世说 ZJL: literature/shishuozjl.md
 
 extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
