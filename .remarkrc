@@ -32,6 +32,7 @@
       "ordered"
     ],
     "remark-gfm",
+    "remark-details",
     "remark-math",
     "remark-math-space",
     "remark-lint-final-newline",
