@@ -163,7 +163,7 @@
 
     ??? note "标题"
         这个文本框会被默认折叠。
-        
+
     ???+ note "[BiliBili](https://bilibili.com)"
         标题也可以使用 Markdown 的超链接。这里的超链接是 HDOJ 的「A + B Problem」。
         
@@ -178,25 +178,23 @@
 -   当需要添加多个不同的展示时，推荐使用 Content tabs，可以实现展示间的切换。Content tabs 还有其他的用法，详见 [Content tabs](https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#usage)。其使用方法和效果如下。
 
     ???+ success "示例"
-        ````text
+        ```text
         注意需要在文本前面添加 4 个空格。其他的语法还是与 Markdown 语法一致。
         
         === "天才"
-        
-            **ZJL** 是 **天才**
             
-        === "蠢材"
+            **ZJL** 是 **天才**
         
+        === "蠢材"
+            
             **ZJL** 是 **蠢才**
             
-        ````
+        ```
         
         === "天才"
-        
             **ZJL** 是 **天才**
-            
-        === "蠢材"
         
+        === "蠢材"
             **ZJL** 是 **蠢才**
 
 如果对 mkdocs-material（我们使用的这个主题）还有什么问题，还可以查阅 [MkDocs 使用说明](https://github.com/ctf-wiki/ctf-wiki/wiki/Mkdocs-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)，其介绍了 mkdocs-material 主题的插件使用方式。
@@ -216,7 +214,7 @@
 
     ???+ success "示例"
         前情提要：[关于本项目](./about.md)
-
+        
         本页面将介绍 **ZJL Wiki** 的基础信息。
 
 -   请注意文档结构。文档结构应当十分条理，层次清晰。请不要让诸如「五级标题」这种事情发生，一篇正常的文章是用不到如此复杂的结构层次的。
@@ -240,7 +238,7 @@
         ```markdown
         请参考 GitHub 官方的帮助页面 [Syncing a fork - GitHub Docs](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
         ```
-
+        
         请参考 GitHub 官方的帮助页面 [Syncing a fork - GitHub Docs](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork)
 
 -   受 Markdown 格式限制，`## 参考资料与注释` 二级标题必须放在文末。

@@ -1,0 +1,34 @@
+diff --git a/node_modules/remark-details/lib/mdast-util-details/index.js b/node_modules/remark-details/lib/mdast-util-details/index.js
+index daff4a7..97d65c9 100644
+--- a/node_modules/remark-details/lib/mdast-util-details/index.js
++++ b/node_modules/remark-details/lib/mdast-util-details/index.js
+@@ -5,12 +5,18 @@ function enter(type, token, name) {
+     this.enter({ type: type, name: name !== null && name !== void 0 ? name : '', attributes: {}, children: [] }, token);
+ }
+ function getDetailsAttributes(ctx) {
+-    return ctx.getData('detailsAttributes');
++    return ctx.getData ? ctx.getData('detailsAttributes') : ctx.data['detailsAttributes'];
++}
++function setDetailsAttributes(ctx, value) {
++    if(ctx.setData) 
++        ctx.setData('detailsAttributes', value);
++    else
++        ctx.data['detailsAttributes'] = value;
+ }
+ export const fromMarkdownDetails = {
+     enter: {
+         detailsContainer: function (token) {
+-            this.setData('detailsAttributes', []);
++            setDetailsAttributes(this, [])
+             enter.call(this, 'detailsContainer', token, 'details');
+         },
+         detailsContainerSummary: function (token) {
+@@ -29,7 +35,7 @@ export const fromMarkdownDetails = {
+             }
+             if (classes.length > 0)
+                 cleaned.class = classes.join(' ');
+-            this.setData('detailsAttributes');
++            setDetailsAttributes(this)
+             this.stack[this.stack.length - 1].attributes = cleaned;
+             enter.call(this, 'detailsContainerSummary', token, 'summary');
+         },

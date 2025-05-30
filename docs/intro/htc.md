@@ -72,7 +72,7 @@
 
 详细的操作方式可以参考 **OI-Wiki** 的 [Git](https://oi-wiki.org/tools/git) 页面。
 
-#### 向 Pull Request 追加更改
+#### 通过 Git 向 Pull Request 追加更改
 
 在 clone 下来的本地分支仓库中继续进行修改，并提交（commit）以及推送（push）这些更改即可。你的更改会被自动追加在 Pull Request 中。
 
@@ -161,6 +161,7 @@ GitHub API 在文件目录变更后不能跟踪统计，所以我们在文件头
 5.  这时服务器才会拉取 gh-pages 分支的更新，并重新部署最新版本的内容。
 
 ## 参考资料与注释
+
 改写自：[OI Wiki：如何参与](https://oi-wiki.org/intro/htc)
 
 [^ref1]: [维基百科：新手入门/编辑](https://zh.wikipedia.org/wiki/Wikipedia:%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/%E7%B7%A8%E8%BC%AF)

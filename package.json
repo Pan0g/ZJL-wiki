@@ -1,6 +1,14 @@
 {
   "type": "module",
+  "scripts": {
+    "postinstall": "patch-package",
+    "scripts:format": "prettier --write \"scripts/**/*.ts\"",
+    "scripts:format:check": "prettier --check \"scripts/**/*.ts\"",
+    "docs:format:remark": "remark docs/ -o",
+    "docs:format:check": "node --loader ts-node/esm scripts/checker/checker.ts -i"
+  },
   "devDependencies": {
+    "prettier": "^3.5.3",
     "remark-cli": "^12.0.1",
     "remark-lint": "^10.0.1",
     "remark-lint-no-heading-punctuation": "^4.0.1",
@@ -12,6 +20,9 @@
     "colors": "^1.4.0",
     "klaw": "^4.1.0",
     "node-html-parser": "^7.0.1",
+    "patch-package": "^8.0.0",
+    "postinstall-postinstall": "^2.1.0",
+    "remark": "^14.0.2",
     "remark-copywriting-correct": "^0.6.0",
     "remark-details": "^4.1.1",
     "remark-gfm": "^4.0.1",
